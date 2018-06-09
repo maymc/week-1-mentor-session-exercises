@@ -41,6 +41,28 @@ function firstReverse(str){
  * ie: "cake" => "acek"
  */
 
+function alphaOrder(str){
+    //Check if the parameter's datatype is 'string', if not return 'null'
+    if(typeof str !== "string"){
+        return null;
+    }
+    else{
+        //Convert the string to an array
+        //console.log(str);
+        var alphaArray = str.split("");
+        //console.log(alphaArray);
+        //Sort the array alphabetically
+        var alphabetize = alphaArray.sort();
+        //console.log(alphabetize);
+    }
+    //Convert the array back to a string and return the alphabetized string
+    var alphaString = alphabetize.join("");
+    //console.log(alphaString);
+    return alphaString;
+
+}
+
+
  /** Function: vowelCount
  * The function will take the num parameter being passed in and
  * return the number of vowels in the string
@@ -84,7 +106,7 @@ function firstReverse(str){
 
 module.exports = {
     firstReverse: firstReverse,
-    alphaOrder: null,
+    alphaOrder: alphaOrder,
     vowelCount: null,
     timeConvert: null,
     repeatString: null
