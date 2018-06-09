@@ -71,6 +71,27 @@ function alphaOrder(str){
  * ie: "oreo" => 3
  */
 
+function vowelCount(num){
+    var count = 0;
+    //Check if the parameter's datatype is 'string', if not return 'null'
+    if(typeof num !== "string"){
+        return null;
+    }
+    else{
+        for(var i=0; i<num.length; i++){
+            //Check if the current element is a vowel and if it is, increase the vowel count
+            if(num[i].match(/[aeiou]/gi)){
+                //console.log("letter: " + num[i]);
+                count++;
+                //console.log("count: " + count);
+            }
+        }
+    }
+    //Return the vowel count
+    return count;
+
+}
+
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
  * return the number of hours and minutes. Seperate the number of hours
@@ -107,7 +128,7 @@ function alphaOrder(str){
 module.exports = {
     firstReverse: firstReverse,
     alphaOrder: alphaOrder,
-    vowelCount: null,
+    vowelCount: vowelCount,
     timeConvert: null,
     repeatString: null
 }
