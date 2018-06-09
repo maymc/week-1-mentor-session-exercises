@@ -110,16 +110,20 @@ function vowelCount(num){
      if(typeof str !== "number"){
          return null;
      }
-
+     //If the number is less than an hour, return just the minutes
      if(str < 60){
          hours = 0;
          mins = str;
          return hours + ":" + mins;
      }
      else{
+         //Calculate number of hours and round the number
          hours = Math.floor(str/60);
+         //Determine how many hours to subtract from the original number in minutes
          totalHourMins = hours*60;
+         //Find the remaining amount of minutes
          minDiff = str - totalHourMins;
+         //Return the hours and minutes in the number
          return hours + ":" + minDiff;
      }
  }
