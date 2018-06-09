@@ -101,6 +101,29 @@ function vowelCount(num){
  * ie: 68 => 1:8
  */
 
+ function timeConvert(str){
+     var hours = 0;
+     var mins = 0;
+     var totalHourMins = 0;
+     var minDiff = 0;
+     //If the datatype of the parameter is not a number, return null
+     if(typeof str !== "number"){
+         return null;
+     }
+
+     if(str < 60){
+         hours = 0;
+         mins = str;
+         return hours + ":" + mins;
+     }
+     else{
+         hours = Math.floor(str/60);
+         totalHourMins = hours*60;
+         minDiff = str - totalHourMins;
+         return hours + ":" + minDiff;
+     }
+ }
+
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
  * num times (second argument). Return an empty string if num is a negative number
@@ -110,6 +133,9 @@ function vowelCount(num){
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
 
+// function repeatString(str, times){
+//     if(typeof )
+// }
 
 /**
  * Below here we see a module.exports which is set to an object with a bunch of keys.
@@ -129,6 +155,6 @@ module.exports = {
     firstReverse: firstReverse,
     alphaOrder: alphaOrder,
     vowelCount: vowelCount,
-    timeConvert: null,
+    timeConvert: timeConvert,
     repeatString: null
 }
