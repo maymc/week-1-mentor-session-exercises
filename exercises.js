@@ -137,9 +137,37 @@ function vowelCount(num){
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
 
-// function repeatString(str, times){
-//     if(typeof )
-// }
+function repeatString(str, times){
+    var repeatArray = [];
+
+    //If the first parameter is not a string datatype, return null
+    if(typeof str !== "string"){
+        return null;
+    }
+
+    //If the second parameter is not a number datatype, return null
+    if(typeof times !== "number"){
+        return null;
+    }
+    
+    //If the number is negative, return null
+    if(str < 0){
+        return " ";
+    }
+    else{
+        //Add the string to the array the total amount of times given
+        for(var i=1; i<=times; i++){
+            //Push the string to the array
+            repeatArray.push(str);
+            //console.log(repeatArray);
+            //Convert the array to a string
+            var repeatString = repeatArray.join("");
+            //console.log(repeatString);
+        }
+        return repeatString;
+    }
+}
+
 
 /**
  * Below here we see a module.exports which is set to an object with a bunch of keys.
@@ -160,5 +188,5 @@ module.exports = {
     alphaOrder: alphaOrder,
     vowelCount: vowelCount,
     timeConvert: timeConvert,
-    repeatString: null
+    repeatString: repeatString
 }
