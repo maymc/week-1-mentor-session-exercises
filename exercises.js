@@ -6,6 +6,33 @@
  * ie: "cat" => "tac"
  */
 
+function firstReverse(str){
+    //Create an array to hold the reverse letters
+    var reverseArray = [];
+
+    //Check if the parameter is of datatype string, if not return null
+    if(typeof str !== "string"){
+        return null;
+    }
+    else{
+        //Convert the string to an array
+        var strArray = str.split("");
+        //console.log(strArray);
+        
+        //Pop the last element in the original array of letters and push it to the new array. This will reverse the order of the elements
+        for(var i=(strArray.length-1); i>=0; i--){
+            var letter = strArray.pop();
+            //console.log(letter);
+            reverseArray.push(letter);
+            //console.log(reverseArray);
+        }
+        //Convert the new array to a string and return the reversed string
+        var reverseString = reverseArray.join("");
+        //console.log(reverseString);
+        return reverseString;
+    }
+}
+
  /** Function: alphaOrder
  * The function will take the str parameter being passed in and
  * return the string in alphabetical order
@@ -56,7 +83,7 @@
  */
 
 module.exports = {
-    firstReverse: null,
+    firstReverse: firstReverse,
     alphaOrder: null,
     vowelCount: null,
     timeConvert: null,
